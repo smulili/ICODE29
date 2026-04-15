@@ -65,7 +65,6 @@ const customSolutions = [
 
 const industriesList = [
   { name: "Automotive", id: "automotive" },
-  { name: "Cannabis", id: "cannabis" },
   { name: "Energy & Utilities", id: "energy" },
   { name: "FinTech", id: "fintech" },
   { name: "Healthcare", id: "healthcare" },
