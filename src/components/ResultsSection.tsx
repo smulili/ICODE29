@@ -7,7 +7,7 @@ import nprCaseImg from "@/assets/case-npr.jpg";
 import healthcareCaseImg from "@/assets/case-healthcare.jpg";
 import fintechCaseImg from "@/assets/case-fintech.jpg";
 import consultingCaseImg from "@/assets/case-consulting.jpg";
-import cannabisCaseImg from "@/assets/industry-cannabis.jpg";
+import cannabisCaseImg from "@/assets/M3clipped-1.png";
 
 const ResultsSection = () => {
   return (

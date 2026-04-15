@@ -7,7 +7,7 @@ import {
 
 const industries = [
   { icon: Car, name: "Automotive", id: "automotive" },
-  { icon: Leaf, name: "Cannabis", id: "cannabis" },
+  { icon: Leaf, name: "Agriculture", id: "agriculture" },
   { icon: Lightbulb, name: "Energy & Utilities", id: "energy" },
   { icon: Landmark, name: "FinTech", id: "fintech" },
   { icon: Heart, name: "Healthcare", id: "healthcare" },
