@@ -103,7 +103,18 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Helper function to handle same-page or cross-page navigation with refresh logic
+  // FIX: Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileOpen]);
+
   const handleNav = (targetPath: string, hashId?: string) => {
     setMobileOpen(false);
     setOpenDropdown(null);
@@ -116,12 +127,10 @@ const Navbar = () => {
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       } else {
-        // If element doesn't exist yet or we want a hard scroll to top
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     } else {
       navigate(hashId ? `${targetPath}#${hashId}` : targetPath);
-      // Optional: Force a scroll to top if target path doesn't have a hash
       if (!hashId) window.scrollTo(0, 0);
     }
   };
@@ -264,10 +273,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU - FIXED for scroll isolation */}
       {mobileOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-navbar border-t border-border shadow-2xl h-[calc(100vh-70px)] flex flex-col">
-          <div className="flex-1 overflow-y-auto px-6 py-8">
+        <div className="lg:hidden fixed top-[70px] left-0 w-full bg-navbar border-t border-border shadow-2xl h-[calc(100vh-70px)] flex flex-col z-[60]">
+          <div className="flex-1 overflow-y-auto px-6 py-8 overscroll-contain">
             <div className="flex flex-col gap-2">
               {navItems.map((label) => (
                 <div key={label} className="border-b border-border/50 last:border-0">
@@ -305,7 +314,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="p-6 bg-secondary/50 border-t border-border mt-auto">
+          <div className="p-6 bg-secondary/50 border-t border-border mt-auto shrink-0">
             <button onClick={() => handleNav("/services", "contact")} className="w-full flex items-center justify-center gap-3 bg-[hsl(190,60%,45%)] text-white font-bold text-base py-4 rounded-xl shadow-lg">
               Let's Talk <ArrowRight size={20} />
             </button>

@@ -1,22 +1,49 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
+import obfuscator from 'vite-plugin-javascript-obfuscator';
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-    hmr: {
-      overlay: false,
+  plugins: [
+    react(),
+    // This scrambles the code logic into "gibberish" for production
+    mode === 'production' && obfuscator({
+      options: {
+        compact: true,
+        controlFlowFlattening: true,
+        controlFlowFlatteningThreshold: 1,
+        numbersToExpressions: true,
+        simplify: true,
+        stringArray: true,
+        stringArrayEncoding: ['base64'],
+        splitStrings: true,
+      },
+    }),
+  ].filter(Boolean),
+  build: {
+    sourcemap: false, // Ensure this is false
+    minify: 'terser', // Terser is more aggressive than esbuild for hiding details
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+      format: {
+        comments: false, // Removes all your comments
+      },
+    },
+    rollupOptions: {
+      output: {
+        // This renames the chunks to random strings
+        entryFileNames: `assets/[hash].js`,
+        chunkFileNames: `assets/[hash].js`,
+        assetFileNames: `assets/[hash].[ext]`,
+      },
     },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime", "@tanstack/react-query", "@tanstack/query-core"],
   },
 }));

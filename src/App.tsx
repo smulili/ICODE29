@@ -1,7 +1,8 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+// Replace BrowserRouter with HashRouter
+import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis"; // Import Lenis directly
+import Lenis from "@studio-freight/lenis";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -47,7 +48,6 @@ const ScrollToTop = () => {
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Initialize Lenis directly inside App
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -76,7 +76,8 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        {/* Changed to HashRouter */}
+        <HashRouter>
           <ScrollToTop />
           <ScrollToHash />
           
@@ -90,7 +91,7 @@ const App = () => {
             <Route path="/results" element={<Results />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </TooltipProvider>
     </QueryClientProvider>
   );
