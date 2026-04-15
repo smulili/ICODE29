@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
 // 1. Import the video file from your assets folder
-import backgroundVideo from "@/assets/homevideo.mp4"; 
+import backgroundVideo from "@/assets/servicesvideo.mp4"; 
 
 interface ServicesHeroProps {
   title?: string;

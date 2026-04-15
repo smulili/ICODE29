@@ -13,7 +13,7 @@ const IndustriesHero = () => {
   };
 
   return (
-    <section className="relative min-h-[700px] overflow-hidden">
+    <section className="relative min-h-[7000px] overflow-hidden">
       {/* Video Background Container */}
       <div className="absolute inset-0 lg:w-1/2 overflow-hidden bg-primary">
         <video
