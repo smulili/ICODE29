@@ -96,10 +96,10 @@ const IndustriesHero = () => {
                 <select name="budget" value={form.budget} onChange={handleChange}
                   className="w-full bg-primary border border-primary-foreground/30 text-primary-foreground/60 rounded px-3 py-3 text-sm focus:outline-none focus:border-accent transition-colors">
                   <option value="">Select</option>
-                  <option value="25k-50k">$25,000 - $50,000</option>
-                  <option value="50k-100k">$50,000 - $100,000</option>
-                  <option value="100k-250k">$100,000 - $250,000</option>
-                  <option value="250k+">$250,000+</option>
+                  <option value="500-1k">$500 - $1,000</option>
+                  <option value="1k-3k">$1,000 - $3,000</option>
+                  <option value="5k-10k">$5,000 - $10,000</option>
+                  <option value="10k+">$10,000+</option>
                 </select>
               </div>
 
