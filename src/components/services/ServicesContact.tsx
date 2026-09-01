@@ -111,11 +111,11 @@ const ServicesContact = ({ sourcePage = "unknown" }: ServicesContactProps) => {
             </label>
             <select name="budget" value={form.budget} onChange={handleChange} className="w-full bg-background border border-border text-muted-foreground rounded px-3 py-3 text-sm focus:outline-none focus:border-accent transition-colors">
               <option value="">Select</option>
-              <option value="25k-50k">below- $5,000</option>
-              <option value="25k-50k">$5,000 - $50,000</option>
-              <option value="50k-100k">$50,000 - $100,000</option>
-              <option value="100k-250k">$100,000 - $250,000</option>
-              <option value="250k+">$250,000+</option>
+              <option value="300-500">below- $500</option>
+              <option value="500-1k">$500 - $1,000</option>
+              <option value="1k-5k">$1,000 - $5,000</option>
+              <option value="5k-10k">$5,000 - $10,000</option>
+              <option value="10k+">$10,000+</option>
               <option value="25k-50k">$Other/dont know </option>
             </select>
           </div>
