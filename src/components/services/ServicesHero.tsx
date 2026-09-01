@@ -126,10 +126,10 @@ const ServicesHero = ({ title = "Services", sourcePage = "services" }: ServicesH
                   <label className="text-[11px] font-black uppercase tracking-[0.15em] text-primary-foreground/60 mb-2 block">Estimated Budget <span className="text-accent">*</span></label>
                   <select name="budget" value={form.budget} onChange={handleChange} className="w-full bg-primary/40 border border-primary-foreground/20 text-primary-foreground rounded-none px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors appearance-none cursor-pointer">
                     <option value="" className="bg-primary text-primary-foreground">Select Range</option>
-                    <option value="25k-50k" className="bg-primary text-primary-foreground">$25,000 - $50,000</option>
-                    <option value="50k-100k" className="bg-primary text-primary-foreground">$50,000 - $100,000</option>
-                    <option value="100k-250k" className="bg-primary text-primary-foreground">$100,000 - $250,000</option>
-                    <option value="250k+" className="bg-primary text-primary-foreground">$250,000+</option>
+                    <option value="25k-50k" className="bg-primary text-primary-foreground">$500 - $1,000</option>
+                    <option value="50k-100k" className="bg-primary text-primary-foreground">$1,000 - $3,000</option>
+                    <option value="100k-250k" className="bg-primary text-primary-foreground">$3,000 - $5,000</option>
+                    <option value="250k+" className="bg-primary text-primary-foreground">$5,000+</option>
                   </select>
                 </div>
 
