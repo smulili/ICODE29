@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// Replace BrowserRouter with HashRouter
-import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
+// Changed HashRouter to BrowserRouter
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -76,13 +76,14 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {/* Changed to HashRouter */}
-        <HashRouter>
+
+        {/* Changed HashRouter to BrowserRouter */}
+        <BrowserRouter>
           <ScrollToTop />
           <ScrollToHash />
-          
+
           <LetsTalkButton />
-          
+
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
@@ -91,7 +92,8 @@ const App = () => {
             <Route path="/results" element={<Results />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
+
       </TooltipProvider>
     </QueryClientProvider>
   );
