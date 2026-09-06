@@ -10,9 +10,7 @@
 
   <circle cx="110" cy="175" r="70" fill="#101C28"/>
   
-  <circle cx="128" cy="75" r="14" fill="#C2D501"/>
-  
   <rect x="93" y="120" width="22" height="100" fill="#C2D501" rx="5" transform="rotate(15, 110, 175)"/>
   
-  <text x="112" y="215" class="terminal-bold" font-size="12" fill="#C2D501">_code29</text>
+  <text x="112" y="215" class="terminal-bold" font-size="12" fill="#C2D501">_29</text>
 </svg>
