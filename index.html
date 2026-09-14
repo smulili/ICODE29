@@ -9,7 +9,10 @@
     />
 
     <meta name="theme-color" content="#ffffff" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="referrer"
+      content="strict-origin-when-cross-origin"
+    />
 
     <!-- =========================
          PRIMARY SEO
@@ -49,32 +52,44 @@
     />
 
     <!-- =========================
-         GLOBAL FAVICON
-         File: public/favicon.svg
+         FAVICON
+         Files:
+         public/favicon.svg
+         public/favicon.png
     ========================== -->
 
+    <!-- Modern browsers -->
     <link
       rel="icon"
       type="image/svg+xml"
       href="/favicon.svg"
     />
 
+    <!-- PNG fallback -->
     <link
-      rel="shortcut icon"
-      type="image/svg+xml"
-      href="/favicon.svg"
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/favicon.png"
     />
 
+    <!-- Legacy browser fallback -->
+    <link
+      rel="shortcut icon"
+      href="/favicon.png"
+    />
+
+    <!-- Apple devices -->
     <link
       rel="apple-touch-icon"
-      href="/favicon.svg"
+      sizes="512x512"
+      href="/favicon.png"
     />
 
     <!-- =========================
          OPEN GRAPH
          File: public/og-image.png
-         Used by WhatsApp, Facebook,
-         LinkedIn and other platforms
+         Used for social sharing
     ========================== -->
 
     <meta
@@ -206,7 +221,7 @@
 
         "logo": {
           "@type": "ImageObject",
-          "url": "https://invcode29.com/favicon.svg"
+          "url": "https://invcode29.com/favicon.png"
         },
 
         "image": "https://invcode29.com/og-image.png",
@@ -381,13 +396,17 @@
         "@id": "https://invcode29.com/#webpage",
         "url": "https://invcode29.com/",
         "name": "InvCode 29 Fintech | Software, Web Development & Digital Solutions",
+
         "isPartOf": {
           "@id": "https://invcode29.com/#website"
         },
+
         "about": {
           "@id": "https://invcode29.com/#organization"
         },
+
         "description": "InvCode 29 Fintech provides software development, web development, eCommerce, mobile applications, AI, fintech, API integration, social media management and digital marketing solutions in Kenya, USA and global markets.",
+
         "keywords": [
           "software development",
           "web development",
